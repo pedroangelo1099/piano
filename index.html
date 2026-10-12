@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Piano Tiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game">
+    <canvas id="canvas"></canvas>
+
+    <div id="hud">
+      <div class="hud-box">
+        <span id="score">0</span>
+        <small>pontos</small>
+      </div>
+      <div id="combo" class="hud-combo"></div>
+      <button id="pauseBtn" class="icon-btn" aria-label="Pausar">❚❚</button>
+    </div>
+
+    <div id="judgement"></div>
+
+    <!-- Menu inicial -->
+    <section id="menu" class="overlay">
+      <h1>Piano Tiles</h1>
+      <p class="sub">Be My Baby</p>
+      <p id="status" class="status">Carregando música...</p>
+
+      <button id="playBtn" class="main-btn" disabled>Jogar</button>
+      <p class="hint">Toque nas teclas e segure as compridas até o fim.<br>Teclado: D, F, J, K &nbsp;|&nbsp; Espaço pausa</p>
+    </section>
+
+    <!-- Pausa -->
+    <section id="pause" class="overlay hidden">
+      <h2>Pausado</h2>
+      <button id="resumeBtn" class="main-btn">Continuar</button>
+      <button id="quitBtn" class="ghost-btn">Voltar ao menu</button>
+    </section>
+
+    <!-- Fim: tela romântica -->
+    <section id="end" class="overlay hidden">
+      <div id="hearts" class="hearts" aria-hidden="true"></div>
+
+      <figure class="polaroid">
+        <img id="couplePhoto" src="foto.jpg" alt="Nós dois">
+        <figcaption>Você e eu 💗</figcaption>
+      </figure>
+
+      <h2 id="loveTitle">Be my baby?</h2>
+
+      <div id="loveButtons" class="love-buttons">
+        <button id="yesBtn" class="main-btn">Sim 💖</button>
+        <button id="noBtn" class="ghost-btn">Não</button>
+      </div>
+      <p id="loveAnswer" class="love-answer"></p>
+
+      <div class="result">
+        <div><b id="rScore">0</b><small>pontos</small></div>
+        <div><b id="rAcc">0%</b><small>precisão</small></div>
+        <div><b id="rCombo">0</b><small>maior combo</small></div>
+      </div>
+      <div class="end-actions">
+        <button id="againBtn" class="ghost-btn">Jogar de novo</button>
+        <button id="menuBtn" class="ghost-btn">Voltar ao menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="notas.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
